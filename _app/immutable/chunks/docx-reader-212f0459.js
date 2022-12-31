@@ -1,0 +1,1 @@
+const o="Docx Reader",e="Fast docx file opener for debate",t={gitHub:"http://github.com/Ashwagandhae/docx-reader"},c=[192,100,30],n={name:o,description:e,links:t,color:c};export{c as color,n as default,e as description,t as links,o as name};

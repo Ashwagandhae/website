@@ -1,0 +1,1 @@
+const o="Blob World",t="A python game where blobs fight blobs",l={gitHub:"http://github.com/Ashwagandhae/blob-world"},n=[331,47,25],s={name:o,description:t,links:l,color:n};export{n as color,s as default,t as description,l as links,o as name};
