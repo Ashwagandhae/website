@@ -1,0 +1,6 @@
+{
+	"name": "Docx Reader",
+	"description": "Fast docx file opener for debate",
+	"links": { "gitHub": "http://github.com/Ashwagandhae/docx-reader" },
+	"color": [192, 100, 30]
+}

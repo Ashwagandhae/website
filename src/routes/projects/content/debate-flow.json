@@ -1,0 +1,12 @@
+{
+	"name": "Debate Flow",
+	"description": "Debate note-taking web app",
+	"links": {
+		"gitHub": "https://github.com/Ashwagandhae/debate-flow",
+		"browser": "https://ashwagandhae.github.io/debate-flow/"
+	},
+	"iframe": "https://ashwagandhae.github.io/debate-flow/",
+	"longDescription": "Even though typing is faster, most people flow on paper because spreadsheets are bad",
+	"tags": ["SvelteJS", "TypeScript", "JavaScript", "HTML", "CSS"],
+	"color": [227, 50, 40]
+}
