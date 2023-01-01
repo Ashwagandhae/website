@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Link from './Link.svelte';
-	export let links: { icon: string; link: string }[] = [];
+	export let links: { icon: string; label: string; link?: string; copy?: string }[] = [];
 </script>
 
 <div class="top">

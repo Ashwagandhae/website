@@ -15,7 +15,7 @@ export function getPaletteStyle(palette: ColorPalette | null) {
     --back-2-hover: hsl(${h}, ${s}%, ${l + 5}%);
     --text: hsl(${h}, 29%, 88%);
     --text-strong: hsl(${h}, 0%, 100%);
-    --text-weak: hsl(${h}, 18%, 62%);
+    --text-weak: hsl(${h}, 18%, 70%);
     --link: hsl(${h}, 64%, 61%);
     --link-hover: hsl(${h}, 100%, 81%);
   `;

@@ -1,10 +1,18 @@
 {
 	"name": "Debate Flow",
 	"description": "Debate note-taking web app",
-	"links": {
-		"gitHub": "https://github.com/Ashwagandhae/debate-flow",
-		"browser": "https://ashwagandhae.github.io/debate-flow/"
-	},
+	"links": [
+		{
+			"icon": "gitHub",
+			"link": "https://github.com/Ashwagandhae/debate-flow",
+			"label": "Link to GitHub repository"
+		},
+		{
+			"icon": "browser",
+			"link": "https://ashwagandhae.github.io/debate-flow/",
+			"label": "Link to live website"
+		}
+	],
 	"iframe": "https://ashwagandhae.github.io/debate-flow/",
 	"longDescription": "Even though typing is faster, most people flow on paper because spreadsheets are bad",
 	"tags": ["SvelteJS", "TypeScript", "JavaScript", "HTML", "CSS"],

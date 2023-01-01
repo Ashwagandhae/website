@@ -10,6 +10,7 @@
 	export let square = false;
 	export let hideBack = false;
 	export let palette: ColorPalette | null = null;
+	export let fullContent = false;
 	$: style = getPaletteStyle(palette);
 </script>
 
@@ -17,6 +18,7 @@
 	class="card"
 	class:hideBack
 	class:square
+	class:fullContent
 	class:hoverable={path != null}
 	{style}
 	on:mouseenter
@@ -77,8 +79,9 @@
 		z-index: 1;
 		height: auto;
 	}
-	/* if square, height isn't auto */
-	.square .content {
+	/* if square or full, height isn't auto */
+	.square .content,
+	.fullContent .content {
 		height: 100%;
 	}
 	/* remove link style */

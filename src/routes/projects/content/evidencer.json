@@ -1,6 +1,12 @@
 {
 	"name": "Evidencer",
 	"description": "Debate card cutting chrome extension",
-	"links": { "gitHub": "https://github.com/Ashwagandhae/evidencer" },
+	"links": [
+		{
+			"icon": "gitHub",
+			"link": "https://github.com/Ashwagandhae/evidencer",
+			"label": "Link to GitHub repository"
+		}
+	],
 	"color": [202, 50, 30]
 }

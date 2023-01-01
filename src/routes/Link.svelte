@@ -1,12 +1,26 @@
 <script lang="ts">
 	import Icon from './Icon.svelte';
+	import { messenger } from './stores';
 	export let icon: string;
-	export let link: string;
+	export let label: string;
+	export let link: string | null = null;
+	export let copy: string | null = null;
+
+	function copyToClipboard() {
+		navigator.clipboard.writeText(copy as string);
+		messenger.addMessage(`Copied to clipboard`);
+	}
 </script>
 
-<a href={link} target="_blank" rel={link} class="link">
-	<Icon name={icon} size="1.5rem" />
-</a>
+{#if link}
+	<a href={link} target="_blank" rel={link} class="link" aria-label={label}>
+		<Icon name={icon} size="1.5rem" />
+	</a>
+{:else if copy != null}
+	<button on:click={copyToClipboard} class="link" aria-label={label}>
+		<Icon name={icon} size="1.5rem" />
+	</button>
+{/if}
 
 <style>
 	.link {
@@ -23,5 +37,11 @@
 	}
 	.link:hover {
 		background: var(--back-2-hover);
+	}
+	/* remove button styles */
+	button {
+		background: none;
+		border: none;
+		padding: 0;
 	}
 </style>

@@ -1,6 +1,12 @@
 {
 	"name": "Docx Reader",
 	"description": "Fast docx file opener for debate",
-	"links": { "gitHub": "http://github.com/Ashwagandhae/docx-reader" },
+	"links": [
+		{
+			"icon": "gitHub",
+			"link": "https://github.com/Ashwagandhae/docx-reader",
+			"label": "Link to GitHub repository"
+		}
+	],
 	"color": [192, 100, 30]
 }

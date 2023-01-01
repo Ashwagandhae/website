@@ -1,7 +1,9 @@
 <script lang="ts">
+	import { onDestroy } from 'svelte';
 	import type { Project } from '../../types';
 	import Card from '../Card.svelte';
 	import { palette } from '../stores';
+
 	export let project: Project;
 
 	let hover: boolean = false;
@@ -12,20 +14,19 @@
 			palette.set(null);
 		}
 	}
+
 	$: hover, onHoverChange();
 </script>
 
 <Card
-	path={`./projects/${project.slug}`}
+	path="./projects/{project.slug}"
 	square
 	on:mouseenter={() => (hover = true)}
 	on:mouseleave={() => (hover = false)}
 	palette={project.color}
 >
 	<div class="content">
-		{#if project.icon}
-			{@html project.icon}
-		{/if}
+		{@html project.icon}
 		<h2>{project.name}</h2>
 	</div>
 </Card>

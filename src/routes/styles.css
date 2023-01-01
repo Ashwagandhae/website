@@ -20,26 +20,45 @@
 	--radius-small: 0.4rem;
 	--gap: 1rem;
 	--pad: 1rem;
+	--pad-small: 0.5rem;
 	--tran: 400ms;
 	--tran-short: 200ms;
 	--tran-long: 800ms;
 	--footer-height: 3rem;
+	--h1-size: 2.5rem;
+	--h2-size: 2rem;
+	--normal-size: 1rem;
+}
+@media (max-width: 600px) {
+	:root {
+		--h1-size: 2rem;
+		--h2-size: 1.5rem;
+		--normal-size: 1rem;
+	}
 }
 
 :root {
+	--back-0: hsl(276, 3%, 10%);
 	--back: hsl(276, 3%, 19%);
 	--back-1: hsl(275, 5%, 26%);
 	--back-1-hover: hsl(284, 7%, 34%);
 	--back-2: hsl(275, 5%, 34%);
 	--back-2-hover: hsl(286, 10%, 52%);
-	--text: hsl(289, 15%, 88%);
+	--text: hsl(289, 15%, 90%);
 	--text-strong: hsl(0, 0%, 100%);
-	--text-weak: hsl(283, 9%, 62%);
+	--text-weak: hsl(283, 9%, 70%);
 	--link: hsl(289, 64%, 61%);
 	--link-hover: hsl(289, 100%, 81%);
 }
 
 body {
+	margin: 0;
+	font-family: var(--font);
+	background-color: var(--back);
+	color: var(--text);
+	transition: background-color var(--tran), color var(--tran);
+}
+.back {
 	height: 100vh;
 	width: 100vw;
 	margin: 0;
@@ -51,13 +70,13 @@ body {
 
 h1 {
 	margin: 0;
-	font-size: 2.5rem;
+	font-size: var(--h1-size);
 	font-weight: 500;
 	font-family: var(--font);
 }
 h2 {
 	margin: 0;
-	font-size: 2rem;
+	font-size: var(--h2-size);
 	font-family: var(--font);
 	font-weight: 500;
 }
@@ -65,7 +84,7 @@ h2 {
 p {
 	margin: 0;
 	line-height: 2em;
-	font-size: 1rem;
+	font-size: var(--normal-size);
 	font-weight: 400;
 	font-family: var(--font-2);
 	color: var(--text-weak);
@@ -73,7 +92,7 @@ p {
 a {
 	text-decoration: none;
 	color: var(--link);
-	font-size: 1rem;
+	font-size: var(--normal-size);
 	font-weight: 400;
 	font-family: var(--font-2);
 }

@@ -2,7 +2,7 @@ export type Project = {
 	name: string;
 	description: string;
 	longDescription?: string;
-	links: { [key: string]: string };
+	links: { icon: string; url: string; label: string }[];
 	slug: string;
 	iframe?: string;
 	tags?: string[];
@@ -11,3 +11,8 @@ export type Project = {
 };
 
 export type ColorPalette = [number, number, number];
+
+export type Message = {
+	text: string;
+	id: number;
+};

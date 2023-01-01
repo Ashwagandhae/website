@@ -1,37 +1,37 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import CardGroup from './CardGroup.svelte';
+	import Messages from './Messages.svelte';
 	import { getPaletteStyle } from './palette';
 	import { palette } from './stores';
 	import './styles.css';
-
-	let style = '';
-	// only run onMount to avoid server-side errors
-	onMount(() => {
-		palette.subscribe((value) => {
-			document.body.style.cssText = getPaletteStyle(value);
-		});
-	});
+	import PageTransition from './PageTransition.svelte';
 </script>
 
-<main>
-	<div class="container">
-		<CardGroup>
-			<slot />
-		</CardGroup>
-	</div>
-</main>
-<footer>
-	<p>
-		Fonts: <a href="https://github.com/mona-sans">Mona Sans</a> by Github,
-		<a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a> by JetBrains.
-	</p>
-</footer>
+<div class="back" style={getPaletteStyle($palette)}>
+	<Messages />
+	<PageTransition>
+		<main>
+			<div class="container">
+				<CardGroup>
+					<slot />
+				</CardGroup>
+			</div>
+		</main>
+	</PageTransition>
+	<footer>
+		<p>
+			Fonts: <a href="https://github.com/mona-sans">Mona Sans</a> by Github,
+			<a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a> by JetBrains.
+		</p>
+	</footer>
+</div>
 
 <style>
 	main {
 		display: flex;
 		justify-content: center;
+		position: relative;
 	}
 	footer {
 		display: flex;

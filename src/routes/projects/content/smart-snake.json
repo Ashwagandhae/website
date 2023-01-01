@@ -1,7 +1,13 @@
 {
 	"name": "Smart Snake",
 	"description": "Evolutionary algorithm that plays the snake game",
-	"links": { "gitHub": "http://github.com/Ashwagandhae/smart-snake" },
+	"links": [
+		{
+			"icon": "gitHub",
+			"link": "https://github.com/Ashwagandhae/smart-snake",
+			"label": "Link to GitHub repository"
+		}
+	],
 	"longDescription": "Even though typing is faster, most people flow on paper because spreadsheets are bad",
 	"tags": ["Python", "Evolution", "p5"],
 	"color": [166, 100, 22]

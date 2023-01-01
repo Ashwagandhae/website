@@ -8,18 +8,14 @@
 	import { palette } from '../../stores';
 	export let data: Project;
 
-	onMount(() => {
-		if (data.color != null) {
-			palette.set(data.color);
-		}
-	});
+	$palette = data.color;
 	onDestroy(() => {
-		palette.set(null);
+		$palette = null;
 	});
 </script>
 
 <TopCards>
-	<Card path="">
+	<Card path="./projects">
 		<div class="header">
 			<div class="icon">
 				{@html data.icon}
@@ -34,11 +30,7 @@
 	</Card>
 	<Card>
 		<h2>Links</h2>
-		<LinkGroup
-			links={Object.keys(data.links).map(function (key) {
-				return { icon: key, link: data.links[key] };
-			})}
-		/>
+		<LinkGroup links={data.links} />
 	</Card>
 </TopCards>
 <div class="content">

@@ -13,7 +13,7 @@
 </svelte:head>
 
 <TopCards>
-	<Card title="Projects" subtitle="Things that I've created" path="" />
+	<Card title="Projects" subtitle="Things that I've created" path="./" />
 	<Card>
 		<h2>Filter</h2>
 	</Card>
