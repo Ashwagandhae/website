@@ -1,1 +1,0 @@
-const e="Evidencer",n="Debate card cutting chrome extension",t={gitHub:"https://github.com/Ashwagandhae/evidencer"},c=[202,50,30],o={name:e,description:n,links:t,color:c};export{c as color,o as default,n as description,t as links,e as name};
