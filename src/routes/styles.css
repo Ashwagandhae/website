@@ -28,6 +28,9 @@
 	--h1-size: 2.5rem;
 	--h2-size: 2rem;
 	--normal-size: 1rem;
+
+	--side-padding-x: max(var(--gap), calc(30vw - 10rem));
+	--side-padding-y: max(var(--gap), calc(30vh - 10rem));
 }
 @media (max-width: 600px) {
 	:root {
@@ -59,8 +62,8 @@ body {
 	transition: background-color var(--tran), color var(--tran);
 }
 .back {
-	height: 100vh;
-	width: 100vw;
+	height: 100%;
+	width: 100%;
 	margin: 0;
 	font-family: var(--font);
 	background-color: var(--back);

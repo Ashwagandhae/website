@@ -11,7 +11,7 @@
 		{ x: 0, y: 15 },
 		{ x: 0, y: -15 }
 	];
-	let directionIndex: number = 0;
+	let directionIndex: number = Math.floor(Math.random() * possibleDirections.length);
 	let direction: { x: number; y: number };
 	let oppositeDirection: { x: number; y: number };
 	function onProjectUpdate() {
@@ -33,8 +33,8 @@
 		{#key refresh}
 			<div
 				class="transition"
-				in:fly={{ ...direction, duration: 400, delay: 400 }}
-				out:fly={{ ...oppositeDirection, duration: 400 }}
+				in:fly|local={{ ...direction, duration: 400, delay: 400 }}
+				out:fly|local={{ ...oppositeDirection, duration: 400 }}
 			>
 				{@html project.icon}
 			</div>

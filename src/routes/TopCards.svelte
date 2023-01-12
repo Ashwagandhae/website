@@ -43,7 +43,7 @@
 		opacity: 0;
 		bottom: -3rem;
 		pointer-events: none;
-		transition: opacity var(--tran) ease;
+		transition: opacity var(--tran) ease, background var(--tran) ease;
 		background: linear-gradient(180deg, var(--back) 0%, var(--back) 25%, transparent 100%);
 	}
 	div.stuck::after {

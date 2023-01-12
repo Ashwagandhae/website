@@ -5,27 +5,11 @@
 	import { palette } from '../stores';
 
 	export let project: Project;
-
-	let hover: boolean = false;
-	function onHoverChange() {
-		if (hover) {
-			palette.set(project.color);
-		} else {
-			palette.set(null);
-		}
-	}
-
-	$: hover, onHoverChange();
 </script>
 
-<Card
-	path="./projects/{project.slug}"
-	square
-	on:mouseenter={() => (hover = true)}
-	on:mouseleave={() => (hover = false)}
-	palette={project.color}
->
+<Card path="./projects/{project.slug}" square palette={project.color} modifyGlobalPalette>
 	<div class="content">
+		<p>{project.description}</p>
 		{@html project.icon}
 		<h2>{project.name}</h2>
 	</div>
@@ -35,10 +19,12 @@
 	.content {
 		display: flex;
 		align-items: center;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		flex-direction: column;
 		position: relative;
 		height: 100%;
+		padding-bottom: 1rem;
+		box-sizing: border-box;
 	}
 	.content > :global(svg) {
 		height: 50%;
@@ -48,7 +34,7 @@
 		opacity: 0.7;
 	}
 	:global(.card:hover) .content > :global(svg) {
-		transform: translateY(1.5rem) scale(1.5);
+		transform: translateY(3rem) scale(1.5);
 		opacity: 1;
 	}
 	.content > h2 {
@@ -63,5 +49,16 @@
 	:global(.card:hover) .content > h2 {
 		transform: translateY(100%);
 		opacity: 0;
+	}
+	.content > p {
+		width: 100%;
+		height: 0;
+		opacity: 0;
+		transition: all var(--tran) ease;
+		text-align: center;
+	}
+	/* show para */
+	:global(.card:hover) .content > p {
+		opacity: 1;
 	}
 </style>

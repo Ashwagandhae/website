@@ -3,6 +3,7 @@
 	import type { ColorPalette } from '../types';
 	import { sineIn } from 'svelte/easing';
 	import { getPaletteStyle } from './palette';
+	import { palette as globalPalette } from './stores';
 
 	export let title: string | null = null;
 	export let path: string | null = null;
@@ -11,7 +12,20 @@
 	export let hideBack = false;
 	export let palette: ColorPalette | null = null;
 	export let fullContent = false;
+	export let hoverable = false;
+	export let modifyGlobalPalette = false;
+
 	$: style = getPaletteStyle(palette);
+	let hover: boolean;
+	function onHoverChange() {
+		if (!modifyGlobalPalette) return;
+		if (hover) {
+			globalPalette.set(palette);
+		} else {
+			globalPalette.set(null);
+		}
+	}
+	$: hover, palette, onHoverChange();
 </script>
 
 <div
@@ -19,8 +33,10 @@
 	class:hideBack
 	class:square
 	class:fullContent
-	class:hoverable={path != null}
+	class:hoverable={hoverable || path != null}
 	{style}
+	on:mouseenter={() => (hover = true)}
+	on:mouseleave={() => (hover = false)}
 	on:mouseenter
 	on:mouseleave
 >
@@ -62,7 +78,6 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
-
 	.card > a {
 		position: absolute;
 		top: 0;

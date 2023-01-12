@@ -15,6 +15,6 @@
 	],
 	"iframe": "https://ashwagandhae.github.io/debate-flow/",
 	"longDescription": "Even though typing is faster, most people flow on paper because spreadsheets are bad",
-	"tags": ["SvelteJS", "TypeScript", "JavaScript", "HTML", "CSS"],
+	"tags": ["Svelte", "TypeScript", "JavaScript", "HTML", "CSS"],
 	"color": [227, 50, 40]
 }

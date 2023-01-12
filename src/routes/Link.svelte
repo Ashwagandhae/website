@@ -5,6 +5,7 @@
 	export let label: string;
 	export let link: string | null = null;
 	export let copy: string | null = null;
+	export let callback: (() => void) | null = null;
 
 	function copyToClipboard() {
 		navigator.clipboard.writeText(copy as string);
@@ -18,6 +19,10 @@
 	</a>
 {:else if copy != null}
 	<button on:click={copyToClipboard} class="link" aria-label={label}>
+		<Icon name={icon} size="1.5rem" />
+	</button>
+{:else if callback != null}
+	<button on:click={callback} class="link" aria-label={label}>
 		<Icon name={icon} size="1.5rem" />
 	</button>
 {/if}

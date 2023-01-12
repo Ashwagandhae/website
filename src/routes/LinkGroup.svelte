@@ -1,16 +1,27 @@
 <script lang="ts">
 	import Link from './Link.svelte';
-	export let links: { icon: string; label: string; link?: string; copy?: string }[] = [];
+	export let links: {
+		icon: string;
+		label: string;
+		link?: string;
+		copy?: string;
+		callback?: () => void;
+	}[] = [];
 </script>
 
-<div class="top">
+<ul class="links">
 	{#each links as link}
 		<Link {...link} />
 	{/each}
-</div>
+</ul>
 
 <style>
-	.top {
+	.links {
+		/* remove ul style */
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
 		width: 100%;
 		height: auto;
 		display: flex;
@@ -22,7 +33,7 @@
 		gap: 0.5rem;
 	}
 	@media (max-width: 600px) {
-		.top {
+		.links {
 			flex-direction: column;
 		}
 	}

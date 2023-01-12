@@ -1,6 +1,6 @@
 {
 	"name": "Smart Snake",
-	"description": "Evolutionary algorithm that plays the snake game",
+	"description": "Evolutionary snake game algorithm",
 	"links": [
 		{
 			"icon": "gitHub",

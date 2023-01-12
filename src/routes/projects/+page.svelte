@@ -2,6 +2,7 @@
 	import Card from '../Card.svelte';
 	import ProjectCard from './ProjectCard.svelte';
 	import TopCards from '../TopCards.svelte';
+	import LinkGroup from '../LinkGroup.svelte';
 	import type { Project } from '../../types';
 
 	export let data: { projects: Project[] };
@@ -16,10 +17,22 @@
 	<Card title="Projects" subtitle="Things that I've created" path="./" />
 	<Card>
 		<h2>Filter</h2>
+		<LinkGroup
+			links={[
+				{
+					icon: 'tag',
+					label: 'Filter by tag',
+					callback: () => {
+						// TODO: implement filter
+						alert('Not implemented yet :(');
+					}
+				}
+			]}
+		/>
 	</Card>
 </TopCards>
 
-<div class="content card-square">
+<div class="content">
 	{#each data.projects as project}
 		<ProjectCard {project} />
 	{/each}

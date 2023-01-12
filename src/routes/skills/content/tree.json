@@ -1,0 +1,98 @@
+[
+	{
+		"name": "Python",
+		"start": 2015,
+		"children": [
+			{
+				"name": "PyGame",
+				"start": 2016
+			},
+			{
+				"name": "p5",
+				"start": 2018
+			},
+			{
+				"name": "Tensorflow",
+				"start": 2018,
+				"children": [
+					"NumPy",
+					{
+						"name": "Torch",
+						"start": 2022
+					},
+					"MatPlotLib"
+				]
+			}
+		]
+	},
+	{
+		"name": "JavaScript",
+		"start": 2017,
+		"children": [
+			"HTML",
+			"CSS",
+			{
+				"name": "p5",
+				"start": 2018
+			},
+			{ "name": "Vue", "start": 2021, "children": ["Vue Router"] },
+			{
+				"name": "Svelte",
+				"start": 2022,
+				"children": [
+					{
+						"name": "SvelteKit"
+					},
+					{
+						"name": "TypeScript"
+					}
+				]
+			},
+			{
+				"name": "jQuery",
+				"start": 2017
+			},
+			{
+				"name": "Node",
+				"start": 2018,
+				"children": [
+					{
+						"name": "Socket.io",
+						"start": 2019
+					},
+					{
+						"name": "Heroku",
+						"start": 2019
+					}
+				]
+			},
+			{
+				"name": "Chrome Extensions",
+				"start": 2018
+			}
+		]
+	},
+	{
+		"name": "Rust",
+		"start": 2021,
+		"children": ["Tauri"]
+	},
+	{
+		"name": "C++",
+		"start": 2020,
+		"children": [
+			{
+				"name": "USACO"
+			}
+		]
+	},
+	{
+		"name": "Java",
+		"start": 2022,
+		"children": [
+			{
+				"name": "USACO"
+			}
+		]
+	}
+]

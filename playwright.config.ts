@@ -5,7 +5,10 @@ const config: PlaywrightTestConfig = {
 		command: 'npm run build && npm run preview',
 		port: 4173
 	},
-	testDir: 'tests'
+	testDir: 'tests',
+	use: {
+		screenshot: 'only-on-failure'
+	}
 };
 
 export default config;
