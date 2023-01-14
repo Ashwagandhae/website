@@ -23,11 +23,13 @@
 		</div>
 		<p>since {tree.start?.toString()}</p>
 	</Card>
-	<div class="children">
-		{#each tree.children as child}
-			<svelte:self tree={child} />
-		{/each}
-	</div>
+	{#if tree.children.length > 0}
+		<div class="children">
+			{#each tree.children as child}
+				<svelte:self tree={child} />
+			{/each}
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -60,16 +62,16 @@
 		height: 2rem;
 	}
 	/* mobile */
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
 		.skill {
 			flex-direction: column;
 		}
 		.skill > :global(.card) {
-			width: calc(100vw - var(--side-padding-x) * 2);
+			width: calc(100% - var(--gap) * 2);
 		}
 		.children {
-			/* fill the width */
-			width: 100%;
+			width: 90%;
+			padding-left: 10%;
 		}
 		.header > svg {
 			width: 1.5rem;
