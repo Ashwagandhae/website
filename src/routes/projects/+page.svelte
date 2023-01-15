@@ -4,44 +4,67 @@
 	import TopCards from '../TopCards.svelte';
 	import LinkGroup from '../LinkGroup.svelte';
 	import type { Project } from '../../types';
+	import Tags from '../Tags.svelte';
 
 	export let data: { projects: Project[] };
+	// get location.search query params
+	let searchTags: string[] = [];
+	if (typeof window !== 'undefined') {
+		const search = new URLSearchParams(window.location.search);
+		searchTags =
+			search
+				.get('tags')
+				?.split(',')
+				.filter((tag) => tag !== '') ?? [];
+	}
+	let filteredProjects: Project[] = data.projects.filter((project) => {
+		if (searchTags.length === 0) return true;
+		if (project.tags == null) return false;
+		return searchTags.every((tag) => project.tags?.includes(tag));
+	});
 </script>
 
 <svelte:head>
 	<title>Projects</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Things that I've created" />
 </svelte:head>
 
-<TopCards>
-	<Card title="Projects" subtitle="Things that I've created" path="./" />
-	<Card>
-		<h2>Filter</h2>
-		<LinkGroup
-			links={[
-				{
-					icon: 'tag',
-					label: 'Filter by tag',
-					callback: () => {
-						// TODO: implement filter
-						alert('Not implemented yet :(');
-					}
-				}
-			]}
-		/>
+<TopCards single={searchTags.length == 0}>
+	<Card path="./">
+		<h1>Projects</h1>
+		<p>Things that I've created</p>
 	</Card>
+	{#if searchTags.length > 0}
+		<Card>
+			<h2>Filter</h2>
+			<Tags tags={searchTags} capWidth />
+		</Card>
+	{/if}
 </TopCards>
 
 <div class="content">
-	{#each data.projects as project}
-		<ProjectCard {project} />
-	{/each}
+	<div class="grid" style="--card-amount: {filteredProjects.length}">
+		{#each filteredProjects as project}
+			<ProjectCard {project} />
+		{/each}
+	</div>
 </div>
 
 <style>
 	.content {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	.grid {
+		--min-card-size: 15rem;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(var(--min-card-size), 1fr));
 		grid-gap: var(--gap);
+		height: min-content;
+		width: min(
+			calc(100vw - var(--side-padding-x) * 2),
+			calc((var(--min-card-size) + var(--gap)) * var(--card-amount))
+		);
 	}
 </style>

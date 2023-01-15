@@ -1,25 +1,20 @@
 import { json } from '@sveltejs/kit';
-import type { Project } from '../../../types';
+import type { Project, ColorPalette } from '../../../types';
 
 export const GET = async () => {
 	// first get svgs
-	const allSvgFiles = import.meta.glob('/src/routes/projects/content/*.svg', { as: 'raw' });
-	const iterableSvgFiles = Object.entries(allSvgFiles);
+	const iconFiles = Object.entries(import.meta.glob('/src/routes/projects/content/icons/*.json'));
 
-	const svgDict = (
+	const iconDict = Object.fromEntries(
 		await Promise.all(
-			iterableSvgFiles.map(async ([path, resolver]) => {
-				const svg = (await resolver()) as string;
+			iconFiles.map(async ([path, resolver]) => {
+				const svg = (await resolver()) as { svg: string; color: ColorPalette };
 
-				// get last part of path
-				const slug = path.split('/').pop()?.split('.').shift() as string;
-				return { svg: svg, slug };
+				const slug = path.split('/').pop()?.replace('.json', '') as string;
+				return [slug, svg] as [string, { svg: string; color: ColorPalette }];
 			})
 		)
-	).reduce((acc, path) => {
-		acc[path.slug] = path.svg;
-		return acc;
-	}, {} as { [key: string]: string });
+	);
 
 	const allProjectFiles = import.meta.glob('/src/routes/projects/content/*.json');
 	const iterableProjectFiles = Object.entries(allProjectFiles);
@@ -34,10 +29,10 @@ export const GET = async () => {
 	);
 	// add svgs to projects
 	allProjects.forEach((project) => {
-		if (Object.hasOwn(svgDict, project.slug)) {
-			project.icon = svgDict[project.slug];
+		if (Object.hasOwn(iconDict, project.slug)) {
+			project.icon = iconDict[project.slug];
 		}
 	});
 
-	return json(allProjects);
+	return json(allProjects as Project[]);
 };

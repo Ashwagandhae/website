@@ -1,9 +1,9 @@
 export async function load({ params }: { params: { slug: string } }) {
 	// get svg
-	const svg = await import(`../content/${params.slug}.svg?raw`);
+	const icon = await import(`../content/icons/${params.slug}.json`);
 
 	// add svg to post
 	const post = await import(`../content/${params.slug}.json`);
 
-	return { ...post, icon: svg.default };
+	return { ...post, icon };
 }

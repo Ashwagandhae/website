@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import CardGroup from './CardGroup.svelte';
 	import Messages from './Messages.svelte';
 	import { getPaletteStyle } from './palette';
@@ -8,23 +7,22 @@
 	import PageTransition from './PageTransition.svelte';
 </script>
 
-<div class="back" style={getPaletteStyle($palette)}>
+<div class="root" style={getPaletteStyle($palette)}>
+	<div class="back" />
 	<Messages />
-	<PageTransition>
-		<main>
-			<div class="container">
-				<CardGroup>
-					<slot />
-				</CardGroup>
-			</div>
-		</main>
-	</PageTransition>
-	<footer>
-		<p>
-			Fonts: <a href="https://github.com/mona-sans">Mona Sans</a> by Github,
-			<a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a> by JetBrains.
-		</p>
-	</footer>
+	<main>
+		<PageTransition>
+			<CardGroup>
+				<slot />
+			</CardGroup>
+		</PageTransition>
+		<footer>
+			<p>
+				Fonts: <a href="https://github.com/mona-sans">Mona Sans</a> by Github,
+				<a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a> by JetBrains.
+			</p>
+		</footer>
+	</main>
 </div>
 
 <style>

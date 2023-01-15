@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import type { ColorPalette } from '../types';
-	import { sineIn } from 'svelte/easing';
 	import { getPaletteStyle } from './palette';
 	import { palette as globalPalette } from './stores';
+	import { fly } from 'svelte/transition';
+	import { reducedMotion } from './accessibility';
 
 	export let title: string | null = null;
 	export let path: string | null = null;
@@ -14,6 +15,7 @@
 	export let fullContent = false;
 	export let hoverable = false;
 	export let modifyGlobalPalette = false;
+	export let onLinkClick: (event: Event) => void = () => {};
 
 	$: style = getPaletteStyle(palette);
 	let hover: boolean;
@@ -26,6 +28,8 @@
 		}
 	}
 	$: hover, palette, onHoverChange();
+
+	let element: HTMLElement;
 </script>
 
 <div
@@ -39,9 +43,15 @@
 	on:mouseleave={() => (hover = false)}
 	on:mouseenter
 	on:mouseleave
+	in:fly={{
+		y: reducedMotion() ? 0 : 15,
+		duration: 800,
+		delay: element.getBoundingClientRect().top + element.getBoundingClientRect().left * 0.5
+	}}
+	bind:this={element}
 >
 	{#if path != null}
-		<a href="{base}/{path}">{title}</a>
+		<a data-sveltekit-noscroll href="{base}/{path}" on:click={onLinkClick}>{title}</a>
 	{/if}
 	{#if title != null}
 		<h1>{title}</h1>

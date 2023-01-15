@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	export let single = false;
 	let element: HTMLElement;
 	let stuck = false;
 	onMount(() => {
 		const observer = new IntersectionObserver(
 			([e]) => {
 				stuck = e.intersectionRatio < 1;
+				stuck && console.log('stuck');
 			},
 			{
 				threshold: [1]
@@ -16,22 +18,24 @@
 	});
 </script>
 
-<div on:scroll bind:this={element} class:stuck>
+<div on:scroll bind:this={element} class:stuck class:single>
 	<slot />
 </div>
 
 <style>
 	div {
-		position: relative;
 		display: grid;
 		gap: var(--gap);
 		grid-template-rows: 1fr;
 		grid-template-columns: 1fr auto;
 		height: min-content;
-		position: sticky;
 		z-index: 10000;
+		position: sticky;
 		top: -1px;
 		padding-top: calc(var(--gap) + 1px);
+	}
+	.single {
+		grid-template-columns: 1fr;
 	}
 	div::after {
 		content: '';

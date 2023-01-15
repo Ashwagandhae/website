@@ -2,14 +2,21 @@
 	export let name: string;
 </script>
 
-<span>{name}</span>
+<span class="tag">{name}</span>
 
 <style>
-	span {
-		color: var(--text);
-		font-family: var(--font-2);
+	.tag {
+		display: block;
+
+		border-radius: var(--radius-small);
 		background: var(--back-2);
 		padding: 0.5rem;
-		border-radius: var(--radius);
+		box-sizing: border-box;
+		font-size: 1rem;
+		color: var(--text);
+		transition: all var(--tran-short) ease-in-out;
+
+		text-decoration: none;
+		white-space: nowrap;
 	}
 </style>

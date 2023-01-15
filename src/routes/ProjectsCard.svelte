@@ -2,7 +2,6 @@
 	import Card from './Card.svelte';
 	import ProjectDisplay from './ProjectDisplay.svelte';
 	import type { Project } from '../types';
-	import { palette } from './stores';
 
 	export let projects: Project[];
 	let projectIndex = 0;
@@ -14,7 +13,7 @@
 	$: project = projects[projectIndex];
 </script>
 
-<Card path="projects" palette={project.color} fullContent modifyGlobalPalette>
+<Card path="projects" palette={project.icon.color} fullContent modifyGlobalPalette>
 	<div class="projects">
 		<div class="text">
 			<h1>Projects</h1>

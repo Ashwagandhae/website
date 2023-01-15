@@ -6,8 +6,10 @@ export type Project = {
 	slug: string;
 	iframe?: string;
 	tags?: string[];
-	color: ColorPalette;
-	icon?: string;
+	icon: {
+		svg: string;
+		color: ColorPalette;
+	};
 };
 
 export type ColorPalette = [number, number, number];

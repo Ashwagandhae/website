@@ -8,5 +8,5 @@
 			"label": "Link to GitHub repository"
 		}
 	],
-	"color": [192, 100, 30]
+	"tags": ["Rust", "Tauri", "Svelte", "HTML", "CSS", "JavaScript", "TypeScript"]
 }

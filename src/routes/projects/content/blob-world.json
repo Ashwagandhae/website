@@ -8,6 +8,5 @@
 			"label": "Link to GitHub repository"
 		}
 	],
-
-	"color": [331, 47, 25]
+	"tags": ["Python", "PyGame"]
 }

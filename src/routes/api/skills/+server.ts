@@ -25,6 +25,7 @@ function normalizeTree(
 }
 
 export const GET = async () => {
+	// typsecript doesn't like this, but it works
 	const trees = (await import('/src/routes/skills/content/tree.json')) as unknown as {
 		default: RawSkillTree[];
 	};

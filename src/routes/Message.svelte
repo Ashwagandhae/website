@@ -13,5 +13,6 @@
 		border-radius: var(--radius);
 		margin-bottom: var(--gap);
 		margin: 0;
+		font-size: 1rem;
 	}
 </style>

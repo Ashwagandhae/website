@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Card from '../Card.svelte';
 	import TopCards from '../TopCards.svelte';
-	import LinkGroup from '../LinkGroup.svelte';
 	import SkillCard from './SkillCard.svelte';
 	import type { SkillTree } from '../../types';
 
@@ -13,11 +12,8 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<TopCards>
+<TopCards single>
 	<Card title="Skills" subtitle="Stuff that I have learned" path="./" />
-	<Card>
-		<h2>Search</h2>
-	</Card>
 </TopCards>
 <div class="content">
 	{#each data.tree as tree}

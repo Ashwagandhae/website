@@ -1,14 +1,14 @@
 <script lang="ts">
 	import TopCards from '../../TopCards.svelte';
 	import Card from '../../Card.svelte';
-	import Tag from '../../Tag.svelte';
+	import Tags from '../../Tags.svelte';
 	import LinkGroup from '../../LinkGroup.svelte';
 	import type { Project } from '../../../types';
-	import { onDestroy, onMount } from 'svelte';
+	import { onDestroy } from 'svelte';
 	import { palette } from '../../stores';
 	export let data: Project;
 
-	$palette = data.color;
+	$palette = data.icon.color;
 	onDestroy(() => {
 		$palette = null;
 	});
@@ -18,7 +18,9 @@
 	<Card path="./projects">
 		<div class="header">
 			<div class="icon">
-				{@html data.icon}
+				<svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+					{@html data.icon.svg}
+				</svg>
 			</div>
 			<h1>
 				{data.name}
@@ -45,11 +47,7 @@
 				<p>{data.longDescription}</p>
 			{/if}
 			{#if data.tags != null}
-				<div class="tags">
-					{#each data.tags as item}
-						<Tag name={item} />
-					{/each}
-				</div>
+				<Tags tags={data.tags} />
 			{/if}
 		</div>
 	</Card>

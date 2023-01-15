@@ -62,8 +62,9 @@ body {
 	transition: background-color var(--tran), color var(--tran);
 }
 .back {
-	height: 100%;
-	width: 100%;
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
 	margin: 0;
 	font-family: var(--font);
 	background-color: var(--back);
@@ -83,13 +84,19 @@ h2 {
 	font-family: var(--font);
 	font-weight: 500;
 }
-
+p,
+a,
+ul,
+ol,
+li,
+span {
+	font-family: var(--font-2);
+}
 p {
 	margin: 0;
 	line-height: 2em;
 	font-size: var(--normal-size);
 	font-weight: 400;
-	font-family: var(--font-2);
 	color: var(--text-weak);
 }
 a {
@@ -97,7 +104,6 @@ a {
 	color: var(--link);
 	font-size: var(--normal-size);
 	font-weight: 400;
-	font-family: var(--font-2);
 }
 a:hover {
 	color: var(--link-hover);

@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
 	import type { Project } from '../../types';
 	import Card from '../Card.svelte';
-	import { palette } from '../stores';
 
 	export let project: Project;
 </script>
 
-<Card path="./projects/{project.slug}" square palette={project.color} modifyGlobalPalette>
+<Card path="./projects/{project.slug}" square palette={project.icon.color} modifyGlobalPalette>
 	<div class="content">
 		<p>{project.description}</p>
-		{@html project.icon}
+		<svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+			{@html project.icon.svg}
+		</svg>
 		<h2>{project.name}</h2>
 	</div>
 </Card>
@@ -26,14 +26,14 @@
 		padding-bottom: 1rem;
 		box-sizing: border-box;
 	}
-	.content > :global(svg) {
+	.content > svg {
 		height: 50%;
 		width: 50%;
 
 		transition: all var(--tran) ease;
 		opacity: 0.7;
 	}
-	:global(.card:hover) .content > :global(svg) {
+	:global(.card:hover) .content > svg {
 		transform: translateY(3rem) scale(1.5);
 		opacity: 1;
 	}
@@ -56,6 +56,7 @@
 		opacity: 0;
 		transition: all var(--tran) ease;
 		text-align: center;
+		color: var(--text);
 	}
 	/* show para */
 	:global(.card:hover) .content > p {

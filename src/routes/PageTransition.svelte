@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
-	import { page } from '$app/stores';
 	import { beforeNavigate } from '$app/navigation';
+	import { reducedMotion } from './accessibility';
 	let refresh = false;
 	let direction = 'right';
 	beforeNavigate((navigation) => {
@@ -14,9 +14,16 @@
 
 {#key refresh}
 	<div
-		in:fly={{ x: direction == 'right' ? 15 : -15, duration: 400, delay: 400 }}
-		out:fly={{ x: direction == 'right' ? -15 : 15, duration: 400 }}
+		class="transition"
+		in:fly={{ x: 0, duration: 0, delay: 400 }}
+		out:fly={{ x: reducedMotion() ? 0 : direction == 'right' ? -15 : 15, duration: 400 }}
 	>
 		<slot />
 	</div>
 {/key}
+
+<style>
+	div {
+		position: absolute;
+	}
+</style>

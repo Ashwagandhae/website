@@ -8,5 +8,5 @@
 			"label": "Link to GitHub repository"
 		}
 	],
-	"color": [202, 50, 30]
+	"tags": ["Chrome Extensions", "JavaScript", "TypeScript", "Svelte", "HTML", "CSS"]
 }

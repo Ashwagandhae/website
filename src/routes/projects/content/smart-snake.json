@@ -9,6 +9,5 @@
 		}
 	],
 	"longDescription": "Even though typing is faster, most people flow on paper because spreadsheets are bad",
-	"tags": ["Python", "Evolution", "p5"],
-	"color": [166, 100, 22]
+	"tags": ["Python", "Evolution", "p5", "Machine Learning"]
 }

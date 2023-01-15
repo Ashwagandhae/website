@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 	import type { Project } from '../types';
-	import ProjectCard from './projects/ProjectCard.svelte';
 
 	export let project: Project;
 	let refresh = false;
@@ -36,7 +35,9 @@
 				in:fly|local={{ ...direction, duration: 400, delay: 400 }}
 				out:fly|local={{ ...oppositeDirection, duration: 400 }}
 			>
-				{@html project.icon}
+				<svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+					{@html project.icon.svg}
+				</svg>
 			</div>
 		{/key}
 	</div>
@@ -61,7 +62,7 @@
 		height: 100%;
 	}
 
-	.icon :global(svg) {
+	.icon svg {
 		height: 100%;
 		width: 100%;
 
