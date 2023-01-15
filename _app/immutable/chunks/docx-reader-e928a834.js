@@ -1,1 +1,0 @@
-const o="Docx Reader",e="Fast docx file opener for debate",t=[{icon:"gitHub",link:"https://github.com/Ashwagandhae/docx-reader",label:"Link to GitHub repository"}],n=[192,100,30],c={name:o,description:e,links:t,color:n};export{n as color,c as default,e as description,t as links,o as name};

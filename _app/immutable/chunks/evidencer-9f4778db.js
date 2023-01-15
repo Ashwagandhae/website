@@ -1,1 +1,0 @@
-const e="Evidencer",n="Debate card cutting chrome extension",t=[{icon:"gitHub",link:"https://github.com/Ashwagandhae/evidencer",label:"Link to GitHub repository"}],o=[202,50,30],i={name:e,description:n,links:t,color:o};export{o as color,i as default,n as description,t as links,e as name};
