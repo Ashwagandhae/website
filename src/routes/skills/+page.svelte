@@ -25,6 +25,7 @@
 	.content {
 		display: flex;
 		flex-direction: column;
+		overflow: scroll;
 		gap: var(--gap);
 	}
 </style>

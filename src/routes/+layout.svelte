@@ -10,36 +10,26 @@
 <div class="root" style={getPaletteStyle($palette)}>
 	<div class="back" />
 	<Messages />
-	<PageTransition>
-		<main>
+	<main>
+		<PageTransition>
 			<CardGroup>
 				<slot />
 			</CardGroup>
-		</main>
+		</PageTransition>
 		<footer>
 			<p>
 				Fonts: <a href="https://github.com/mona-sans">Mona Sans</a> by Github,
 				<a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a> by JetBrains.
 			</p>
 		</footer>
-	</PageTransition>
+	</main>
 </div>
 
 <style>
-	.root {
+	main {
 		display: flex;
 		justify-content: center;
 		position: relative;
-	}
-	.back {
-		position: fixed;
-		height: 100vh;
-		width: 100vw;
-		margin: 0;
-		font-family: var(--font);
-		background-color: var(--back);
-		color: var(--text);
-		transition: background-color var(--tran), color var(--tran);
 	}
 	footer {
 		display: flex;

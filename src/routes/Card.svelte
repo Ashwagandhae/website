@@ -44,7 +44,7 @@
 	on:mouseenter
 	on:mouseleave
 	in:fly={{
-		y: reducedMotion() ? 0 : 25,
+		y: reducedMotion() ? 0 : 15,
 		duration: 800,
 		delay: element.getBoundingClientRect().top + element.getBoundingClientRect().left * 0.5
 	}}
