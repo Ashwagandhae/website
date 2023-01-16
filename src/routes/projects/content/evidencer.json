@@ -5,8 +5,15 @@
 		{
 			"icon": "gitHub",
 			"link": "https://github.com/Ashwagandhae/evidencer",
-			"label": "Link to GitHub repository"
+			"label": "GitHub repository"
+		},
+		{
+			"icon": "figma",
+			"link": "https://www.figma.com/file/L8v4MwA6ifObO0Ag0wCYaq/Evidencer",
+			"label": "Figma design"
 		}
 	],
-	"tags": ["Chrome Extensions", "JavaScript", "TypeScript", "Svelte", "HTML", "CSS"]
+	"longDescription": "Evidencer is a chrome extension that allows you to instantly cite debate cards from news websites. It also has a markup UI that makes it much easier to highlight. ",
+	"tags": ["Chrome Extensions", "JavaScript", "TypeScript", "Svelte", "HTML", "CSS"],
+	"image": "evidencer.jpg"
 }

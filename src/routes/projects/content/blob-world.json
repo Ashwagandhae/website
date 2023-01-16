@@ -5,8 +5,10 @@
 		{
 			"link": "http://github.com/Ashwagandhae/blob-world",
 			"icon": "gitHub",
-			"label": "Link to GitHub repository"
+			"label": "GitHub repository"
 		}
 	],
+	"image": "blob-world.jpg",
+	"longDescription": "Blob World is a game where blobs fight blobs. It was one of the first projects I made. ",
 	"tags": ["Python", "PyGame"]
 }

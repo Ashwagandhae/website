@@ -7,7 +7,6 @@
 		const observer = new IntersectionObserver(
 			([e]) => {
 				stuck = e.intersectionRatio < 1;
-				stuck && console.log('stuck');
 			},
 			{
 				threshold: [1]
@@ -29,7 +28,7 @@
 		grid-template-rows: 1fr;
 		grid-template-columns: 1fr auto;
 		height: min-content;
-		z-index: 10000;
+		z-index: 100;
 		position: sticky;
 		top: -1px;
 		padding-top: calc(var(--gap) + 1px);

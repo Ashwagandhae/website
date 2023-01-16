@@ -1,0 +1,14 @@
+{
+	"name": "Jump",
+	"description": "Socket.io multiplayer platformer",
+	"links": [
+		{
+			"link": "http://github.com/Ashwagandhae/jumpjumpjumpjump",
+			"icon": "gitHub",
+			"label": "GitHub repository"
+		}
+	],
+	"image": "jumpjumpjumpjump.jpg",
+	"longDescription": "Jumpjumpjumpjump is a capture-the-flag style multiplayer browser game. You can aquire power ups to help you capture the flag, and you can damage other players by jumping on them. ",
+	"tags": ["Node", "Socket.io", "JavaScript", "HTML", "CSS", "Heroku"]
+}

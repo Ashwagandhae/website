@@ -7,8 +7,8 @@ test('projects', async ({ page }) => {
 	// card 1
 	await test.step('title card', async () => {
 		// print body
-		expect(await page.locator('.card h1').textContent()).toBe('Projects');
-		expect(await page.locator('.card p').textContent()).toBe("Things that I've created");
+		expect(await page.locator('.card h1').nth(0).textContent()).toBe('Projects');
+		expect(await page.locator('.card p').nth(0).textContent()).toBe("Things that I've created");
 	});
 
 	await test.step('projects', async () => {

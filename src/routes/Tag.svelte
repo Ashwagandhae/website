@@ -1,8 +1,18 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+
 	export let name: string;
+	export let interactive: boolean;
+
+	let params = new URLSearchParams();
+	params.set('tags', name);
 </script>
 
-<span class="tag">{name}</span>
+{#if interactive}
+	<a class="tag" data-sveltekit-noscroll href="{base}/projects?{params.toString()}">{name}</a>
+{:else}
+	<span class="tag">{name}</span>
+{/if}
 
 <style>
 	.tag {
@@ -10,13 +20,17 @@
 
 		border-radius: var(--radius-small);
 		background: var(--back-2);
-		padding: 0.5rem;
 		box-sizing: border-box;
 		font-size: 1rem;
-		color: var(--text);
-		transition: all var(--tran-short) ease-in-out;
+		color: var(--text-weak);
+		transition: background var(--tran-short) ease;
+		padding: 0.5rem;
 
 		text-decoration: none;
 		white-space: nowrap;
+	}
+	a.tag:hover {
+		background: var(--back-2-hover);
+		color: var(--text);
 	}
 </style>

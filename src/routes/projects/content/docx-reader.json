@@ -5,8 +5,15 @@
 		{
 			"icon": "gitHub",
 			"link": "https://github.com/Ashwagandhae/docx-reader",
-			"label": "Link to GitHub repository"
+			"label": "GitHub repository"
+		},
+		{
+			"icon": "figma",
+			"link": "https://www.figma.com/file/YSUpEKhzycalHUfIjg80WB/",
+			"label": "Figma design"
 		}
 	],
-	"tags": ["Rust", "Tauri", "Svelte", "HTML", "CSS", "JavaScript", "TypeScript"]
+	"longDescription": "Debate has many large documents that take forever to open, which can be detrimental when in a round. Docx reader solves this problem, by using the power of Rust to make opening documents nearly instant. Its multi-colored windows and advanced search features are sure to impress. ",
+	"tags": ["Rust", "Tauri", "Svelte", "HTML", "CSS", "JavaScript", "TypeScript"],
+	"image": "docx-reader.jpg"
 }

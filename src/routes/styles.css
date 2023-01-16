@@ -33,6 +33,8 @@
 
 	--side-padding-x: max(var(--gap), calc(30vw - 10rem));
 	--side-padding-y: max(var(--gap), calc(30vh - 10rem));
+
+	--shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
 }
 @media (max-width: 600px) {
 	:root {

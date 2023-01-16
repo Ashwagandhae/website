@@ -3,17 +3,22 @@
 	"description": "Debate note-taking web app",
 	"links": [
 		{
-			"icon": "gitHub",
-			"link": "https://github.com/Ashwagandhae/debate-flow",
-			"label": "Link to GitHub repository"
-		},
-		{
 			"icon": "browser",
 			"link": "https://ashwagandhae.github.io/debate-flow/",
-			"label": "Link to live website"
+			"label": "Live website"
+		},
+		{
+			"icon": "gitHub",
+			"link": "https://github.com/Ashwagandhae/debate-flow",
+			"label": "GitHub repository"
+		},
+		{
+			"icon": "figma",
+			"link": "https://www.figma.com/file/YSUpEKhzycalHUfIjg80WB/",
+			"label": "Figma design"
 		}
 	],
 	"iframe": "https://ashwagandhae.github.io/debate-flow/",
-	"longDescription": "Even though typing is faster, most people flow on paper because spreadsheets are bad",
+	"longDescription": "Even though typing is faster, most people flow on paper because spreadsheets are so hard to use. Debate flow solves this problem by being specifically designed for debate, providing fast typing without the confusion of spreadsheets. ",
 	"tags": ["Svelte", "TypeScript", "JavaScript", "HTML", "CSS"]
 }

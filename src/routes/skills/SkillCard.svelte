@@ -6,7 +6,6 @@
 	export let tree: SkillTree;
 	let params = new URLSearchParams();
 	params.set('tags', tree.name);
-	let paramsString = params.toString();
 </script>
 
 <div class="skill" style="--children-amount: {tree.children.length}">
@@ -15,7 +14,7 @@
 		palette={tree.icon?.color}
 		modifyGlobalPalette
 		hoverable
-		path="projects?{paramsString}"
+		path="projects?{params.toString()}"
 		onLinkClick={() => messenger.addMessage('Searched projects for ' + tree.name)}
 	>
 		<div class="header">

@@ -5,9 +5,10 @@
 		{
 			"icon": "gitHub",
 			"link": "https://github.com/Ashwagandhae/smart-snake",
-			"label": "Link to GitHub repository"
+			"label": "GitHub repository"
 		}
 	],
-	"longDescription": "Even though typing is faster, most people flow on paper because spreadsheets are bad",
+	"longDescription": "Smart snake uses a genetic algorithm to play the snake game. It calculates a score based on how many apples have been eaten for every snake, and chooses the best among them to evolve an optimal neural network.  ",
+	"image": "smart-snake.jpg",
 	"tags": ["Python", "Evolution", "p5", "Machine Learning"]
 }

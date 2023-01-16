@@ -31,6 +31,8 @@
 		height: 100vh;
 		width: 100vw;
 		margin: 0;
+		top: 0;
+		left: 0;
 		font-family: var(--font);
 		background-color: var(--back);
 		color: var(--text);
@@ -38,9 +40,7 @@
 	}
 
 	.root {
-		display: flex;
-		justify-content: center;
-		position: relative;
+		padding: 0 var(--side-padding-x);
 	}
 	footer {
 		display: flex;

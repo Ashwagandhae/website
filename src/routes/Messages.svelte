@@ -6,7 +6,7 @@
 <div class="messages">
 	<ul>
 		{#each $messages as message (message.id)}
-			<Message text={message.text} />
+			<Message {message} />
 		{/each}
 	</ul>
 </div>
@@ -29,6 +29,5 @@
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		gap: var(--pad-small);
 	}
 </style>

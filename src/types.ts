@@ -5,7 +5,8 @@ export type Project = {
 	links: { icon: string; url: string; label: string }[];
 	slug: string;
 	iframe?: string;
-	tags?: string[];
+	image?: string;
+	tags: string[];
 	icon: {
 		svg: string;
 		color: ColorPalette;
@@ -17,6 +18,7 @@ export type ColorPalette = [number, number, number];
 export type Message = {
 	text: string;
 	id: number;
+	count: number;
 };
 
 export type SkillTree = {

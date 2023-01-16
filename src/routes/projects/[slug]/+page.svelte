@@ -6,6 +6,7 @@
 	import type { Project } from '../../../types';
 	import { onDestroy } from 'svelte';
 	import { palette } from '../../stores';
+	import { base } from '$app/paths';
 	export let data: Project;
 
 	$palette = data.icon.color;
@@ -39,6 +40,8 @@
 	<Card hideBack>
 		{#if data.iframe != null}
 			<iframe title={data.name} src={data.iframe} />
+		{:else if data.image != null}
+			<img src="{base}/images/{data.image}" alt={data.name} />
 		{/if}
 	</Card>
 	<Card>
@@ -47,7 +50,7 @@
 				<p>{data.longDescription}</p>
 			{/if}
 			{#if data.tags != null}
-				<Tags tags={data.tags} />
+				<Tags tags={data.tags} interactive />
 			{/if}
 		</div>
 	</Card>
@@ -57,6 +60,16 @@
 	iframe {
 		width: 100%;
 		height: 60vh;
+		margin: 0;
+		padding: 0;
+		border: none;
+		border-radius: var(--radius-small);
+		z-index: -100;
+		display: block;
+	}
+	img {
+		width: 100%;
+		height: auto;
 		margin: 0;
 		padding: 0;
 		border: none;
@@ -97,13 +110,5 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--gap);
-	}
-	.tags {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: var(--gap);
-		color: var(--text-weak);
-		font-family: var(--font-2);
 	}
 </style>

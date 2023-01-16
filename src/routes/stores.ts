@@ -15,21 +15,36 @@ class Messenger {
 	addMessage(text: string) {
 		// add message and removes them after 5 seconds
 		this.messages.update((messages) => {
-			messages.push({ text, id: Date.now() });
-			// trim if longer than 5 seconds
-			if (messages.length > 3) {
-				messages.shift();
-				clearTimeout(this.timeouts.shift());
-			}
-			this.timeouts.push(
-				setTimeout(() => {
+			// add count if messages are the same
+			if (messages.at(-1)?.text === text) {
+				(messages.at(-1) as Message).count++;
+				// reset timeout
+				clearTimeout(this.timeouts.at(-1));
+				this.timeouts[this.timeouts.length - 1] = setTimeout(() => {
 					this.messages.update((messages) => {
 						messages.shift();
 						return messages;
 					});
 					this.timeouts.shift();
-				}, messageLifetime)
-			);
+				}, messageLifetime);
+			} else {
+				messages.push({ text, id: Date.now(), count: 1 });
+				this.timeouts.push(
+					setTimeout(() => {
+						this.messages.update((messages) => {
+							messages.shift();
+							return messages;
+						});
+						this.timeouts.shift();
+					}, messageLifetime)
+				);
+			}
+			// trim if longer than 5 seconds
+			if (messages.length > 3) {
+				messages.shift();
+				clearTimeout(this.timeouts.shift());
+			}
+
 			return messages;
 		});
 	}

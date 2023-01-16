@@ -3,12 +3,13 @@
 
 	export let tags: string[] = [];
 	export let capWidth: boolean = false;
+	export let interactive: boolean = false;
 </script>
 
 <div class="tags">
 	<div class="row" class:capWidth>
 		{#each tags as tag}
-			<Tag name={tag} />
+			<Tag name={tag} {interactive} />
 		{/each}
 	</div>
 </div>
