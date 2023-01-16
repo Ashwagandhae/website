@@ -1,1 +1,0 @@
-const o="Blob World",t="Python game where blobs fight blobs",n=[{link:"http://github.com/Ashwagandhae/blob-world",icon:"gitHub",label:"Link to GitHub repository"}],s=["Python","PyGame"],i={name:o,description:t,links:n,tags:s};export{i as default,t as description,n as links,o as name,s as tags};
