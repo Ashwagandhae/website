@@ -33,6 +33,10 @@ export const GET = async () => {
 			project.icon = iconDict[project.slug];
 		}
 	});
+	// sort projects by date
+	allProjects.sort((a, b) => {
+		return new Date(b.date).getTime() - new Date(a.date).getTime();
+	});
 
 	return json(allProjects as Project[]);
 };

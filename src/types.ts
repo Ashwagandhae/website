@@ -6,6 +6,7 @@ export type Project = {
 	slug: string;
 	iframe?: string;
 	image?: string;
+	date: string;
 	tags: string[];
 	icon: {
 		svg: string;

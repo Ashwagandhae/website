@@ -4,12 +4,16 @@
 	import Tags from '../../Tags.svelte';
 	import LinkGroup from '../../LinkGroup.svelte';
 	import type { Project } from '../../../types';
-	import { onDestroy } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import { palette } from '../../stores';
 	import { base } from '$app/paths';
 	export let data: Project;
 
 	$palette = data.icon.color;
+
+	onMount(() => {
+		$palette = data.icon.color;
+	});
 	onDestroy(() => {
 		$palette = null;
 	});

@@ -1,6 +1,7 @@
 {
 	"name": "Blob World",
 	"description": "Python game where blobs fight blobs",
+	"date": "2016-6-01",
 	"links": [
 		{
 			"link": "http://github.com/Ashwagandhae/blob-world",
@@ -9,6 +10,6 @@
 		}
 	],
 	"image": "blob-world.jpg",
-	"longDescription": "Blob World is a game where blobs fight blobs. It was one of the first projects I made. ",
+	"longDescription": "Blob World is a 2D shooter game where blobs fight blobs. It was one of the first projects I made. ",
 	"tags": ["Python", "PyGame"]
 }

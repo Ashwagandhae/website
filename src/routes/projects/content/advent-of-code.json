@@ -1,0 +1,15 @@
+{
+	"name": "Advent of Code",
+	"description": "Solutions to the coding challenge",
+	"date": "2022-12-01",
+	"links": [
+		{
+			"link": "http://github.com/Ashwagandhae/advent-of-code",
+			"icon": "gitHub",
+			"label": "GitHub repository"
+		}
+	],
+	"image": "advent-of-code.jpg",
+	"longDescription": "Advent of Code is the repository where I store my solutions to the Advent of Code challenge. I often switch the languages that I'm using to learn more about languages I'm unfamiliar with. ",
+	"tags": ["Python", "Rust", "JavaScript", "Node", "Java"]
+}

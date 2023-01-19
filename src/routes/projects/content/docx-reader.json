@@ -1,6 +1,7 @@
 {
 	"name": "Docx Reader",
 	"description": "Fast docx file opener for debate",
+	"date": "2022-07-01",
 	"links": [
 		{
 			"icon": "gitHub",
