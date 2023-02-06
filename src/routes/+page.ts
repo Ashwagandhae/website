@@ -4,11 +4,17 @@ export const prerender = true;
 
 import type { Load } from '@sveltejs/kit';
 import { base } from '$app/paths';
+import type { Project } from '$lib/models/types';
 
 export const load: Load = async ({ fetch }) => {
-	const response = await fetch(`${base}/api/projects`);
-	const projects = await response.json();
+	const projectResponse = await fetch(`${base}/api/projects`);
+	const projectIcons = (await projectResponse.json()).map((project: Project) => ({
+		...project.icon
+	}));
+	const skillResponse = await fetch(`${base}/api/skill-icons`);
+	const skillIcons = await skillResponse.json();
 	return {
-		projects
+		projectIcons,
+		skillIcons
 	};
 };

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Card from '../Card.svelte';
-	import type { SkillTree } from '../../types';
-	import { messenger } from '../stores';
+	import Card from './Card.svelte';
+	import type { SkillTree } from '$lib/models/types';
+	import { messenger } from '$lib/models/stores';
 
 	export let tree: SkillTree;
 	let params = new URLSearchParams();

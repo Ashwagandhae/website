@@ -1,4 +1,4 @@
-import type { ColorPalette } from 'src/types';
+import type { ColorPalette } from '$lib/models/types';
 export function getPaletteStyle(palette: ColorPalette | null) {
 	let style;
 	if (palette == null) {

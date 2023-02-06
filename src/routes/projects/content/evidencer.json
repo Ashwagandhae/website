@@ -16,5 +16,5 @@
 	],
 	"longDescription": "Evidencer is a chrome extension that allows you to instantly cite debate cards from news websites. It also has a markup UI that makes it much easier to highlight. ",
 	"tags": ["Chrome Extensions", "JavaScript", "TypeScript", "Svelte", "HTML", "CSS"],
-	"image": "evidencer.jpg"
+	"image": true
 }

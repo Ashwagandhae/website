@@ -9,7 +9,7 @@
 			"label": "GitHub repository"
 		}
 	],
-	"image": "advent-of-code.jpg",
+	"image": true,
 	"longDescription": "Advent of Code is the repository where I store my solutions to the Advent of Code challenge. I often switch the languages that I'm using to learn more about languages I'm unfamiliar with. ",
 	"tags": ["Python", "Rust", "JavaScript", "Node", "Java"]
 }

@@ -1,0 +1,15 @@
+{
+	"name": "Oma Recipe",
+	"description": "Recipes for baked goods",
+	"date": "2022-01-01",
+	"links": [
+		{
+			"link": "http://github.com/Ashwagandhae/oma-recipe",
+			"icon": "gitHub",
+			"label": "GitHub repository"
+		}
+	],
+	"image": true,
+	"longDescription": "Oma Recipe is digital recipe book for my grandmother's recipes. It is a static site that loads the recipes from JSON files. ",
+	"tags": ["Vue", "Vue Router", "JavaScript", "TypeScript", "CSS", "HTML"]
+}

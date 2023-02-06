@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 	import { beforeNavigate } from '$app/navigation';
-	import { reducedMotion } from './accessibility';
+	import { reducedMotion } from '$lib/models/accessibility';
 	let refresh = false;
 	let direction = 'right';
 	beforeNavigate((navigation) => {

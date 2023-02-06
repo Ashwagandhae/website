@@ -16,5 +16,5 @@
 	],
 	"longDescription": "Debate has many large documents that take forever to open, which can be detrimental when in a round. Docx reader solves this problem, by using the power of Rust to make opening documents nearly instant. Its multi-colored windows and advanced search features are sure to impress. ",
 	"tags": ["Rust", "Tauri", "Svelte", "HTML", "CSS", "JavaScript", "TypeScript"],
-	"image": "docx-reader.jpg"
+	"image": true
 }

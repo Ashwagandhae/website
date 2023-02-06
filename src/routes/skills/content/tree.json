@@ -75,7 +75,13 @@
 	{
 		"name": "Rust",
 		"start": 2021,
-		"children": ["Tauri"]
+		"children": [
+			"Tauri",
+			{
+				"name": "WebAssembly",
+				"start": 2023
+			}
+		]
 	},
 	{
 		"name": "C++",

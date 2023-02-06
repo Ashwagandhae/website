@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import type { Project, ColorPalette } from '../../../types';
+import type { Project, ColorPalette } from '$lib/models/types';
 
 export const GET = async () => {
 	// first get svgs

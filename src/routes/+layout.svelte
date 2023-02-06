@@ -1,14 +1,16 @@
 <script lang="ts">
-	import CardGroup from './CardGroup.svelte';
-	import Messages from './Messages.svelte';
-	import { getPaletteStyle } from './palette';
-	import { palette } from './stores';
+	import CardGroup from '$lib/components/CardGroup.svelte';
+	import Messages from '$lib/components/Messages.svelte';
+	import { getPaletteStyle } from '$lib/models/palette';
+	import { palette } from '$lib/models/stores';
 	import './styles.css';
-	import PageTransition from './PageTransition.svelte';
+	import PageTransition from '$lib/components/PageTransition.svelte';
+	import ChickenYard from '$lib/components/ChickenYard.svelte';
 </script>
 
 <div class="root" style={getPaletteStyle($palette)}>
 	<div class="back" />
+	<ChickenYard />
 	<Messages />
 	<PageTransition>
 		<main>

@@ -1,6 +1,6 @@
 <script>
 	import Message from './Message.svelte';
-	import { messages } from './stores';
+	import { messages } from '$lib/models/stores';
 </script>
 
 <div class="messages">

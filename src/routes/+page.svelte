@@ -1,15 +1,16 @@
 <script lang="ts">
-	import Card from './Card.svelte';
-	import TopCards from './TopCards.svelte';
-	import LinkGroup from './LinkGroup.svelte';
-	import ProjectsCard from './ProjectsCard.svelte';
-	import { palette } from './stores';
-	import type { Project } from '../types';
+	import Card from '$lib/components/Card.svelte';
+	import TopCards from '$lib/components/TopCards.svelte';
+	import LinkGroup from '$lib/components/LinkGroup.svelte';
+	import IconDisplayCard from '$lib/components/IconDisplayCard.svelte';
+	import { palette } from '$lib/models/stores';
+	import type { ColorIcon } from '$lib/models/types';
 
 	$palette = null;
 
 	export let data: {
-		projects: Project[];
+		projectIcons: ColorIcon[];
+		skillIcons: ColorIcon[];
 	};
 </script>
 
@@ -19,7 +20,7 @@
 </svelte:head>
 
 <TopCards>
-	<Card title="Hello, I'm Julian" subtitle="Coder, student, human" />
+	<Card title="Hello, I'm Julian" subtitle="Coder, student, human" path="about" />
 	<Card>
 		<h2>Contacts</h2>
 		<LinkGroup
@@ -37,8 +38,18 @@
 </TopCards>
 
 <div class="content">
-	<ProjectsCard projects={data.projects} />
-	<Card title="Skills" subtitle="Stuff that I have learned" path="skills" />
+	<IconDisplayCard
+		icons={data.projectIcons}
+		title="Projects"
+		subtitle="Things that I have created"
+		path="projects"
+	/>
+	<IconDisplayCard
+		icons={data.skillIcons}
+		title="Skills"
+		subtitle="Stuff that I know"
+		path="skills"
+	/>
 </div>
 
 <style>

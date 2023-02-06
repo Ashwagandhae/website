@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { sineOut } from 'svelte/easing';
-	import type { Message } from '../types';
+	import type { Message } from '$lib/models/types';
 
 	export let message: Message;
 

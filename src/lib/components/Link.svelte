@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Icon from './Icon.svelte';
-	import { messenger } from './stores';
+	import { messenger } from '$lib/models/stores';
 	export let icon: string;
 	export let label: string;
 	export let link: string | null = null;

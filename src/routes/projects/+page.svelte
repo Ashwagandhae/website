@@ -1,10 +1,9 @@
 <script lang="ts">
-	import Card from '../Card.svelte';
-	import ProjectCard from './ProjectCard.svelte';
-	import TopCards from '../TopCards.svelte';
-	import LinkGroup from '../LinkGroup.svelte';
-	import type { Project } from '../../types';
-	import Tags from '../Tags.svelte';
+	import Card from '$lib/components/Card.svelte';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	import TopCards from '$lib/components/TopCards.svelte';
+	import type { Project } from '$lib/models/types';
+	import Tags from '$lib/components/Tags.svelte';
 
 	export let data: { projects: Project[] };
 	// get location.search query params

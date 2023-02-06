@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 import type { Writable } from 'svelte/store';
-import type { ColorPalette, Message } from '../types';
+import type { ColorPalette, Message } from '$lib/models/types';
 
 export const palette: Writable<ColorPalette | null> = writable(null);
 

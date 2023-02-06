@@ -10,6 +10,6 @@
 		}
 	],
 	"longDescription": "Smart snake uses a genetic algorithm to play the snake game. It calculates a score based on how many apples have been eaten for every snake, and chooses the best among them to evolve an optimal neural network.  ",
-	"image": "smart-snake.jpg",
+	"image": true,
 	"tags": ["Python", "Evolution", "p5", "Machine Learning"]
 }

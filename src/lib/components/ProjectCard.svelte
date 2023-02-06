@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Project } from '../../types';
-	import Card from '../Card.svelte';
+	import type { Project } from '$lib/models/types';
+	import Card from './Card.svelte';
 
 	export let project: Project;
 </script>

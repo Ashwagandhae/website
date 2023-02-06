@@ -9,7 +9,7 @@
 			"label": "GitHub repository"
 		}
 	],
-	"image": "blob-world.jpg",
+	"image": true,
 	"longDescription": "Blob World is a 2D shooter game where blobs fight blobs. It was one of the first projects I made. ",
 	"tags": ["Python", "PyGame"]
 }

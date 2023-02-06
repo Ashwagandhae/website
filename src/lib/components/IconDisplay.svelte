@@ -1,8 +1,8 @@
 <script lang="ts">
+	import type { ColorIcon } from '$lib/models/types';
 	import { fly } from 'svelte/transition';
-	import type { Project } from '../types';
 
-	export let project: Project;
+	export let icon: ColorIcon;
 	let refresh = false;
 	const possibleDirections = [
 		{ x: 15, y: 0 },
@@ -24,7 +24,7 @@
 
 		refresh = !refresh;
 	}
-	$: project, onProjectUpdate();
+	$: icon, onProjectUpdate();
 </script>
 
 <div class="display">
@@ -36,7 +36,7 @@
 				out:fly|local={{ ...oppositeDirection, duration: 400 }}
 			>
 				<svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-					{@html project.icon.svg}
+					{@html icon.svg}
 				</svg>
 			</div>
 		{/key}

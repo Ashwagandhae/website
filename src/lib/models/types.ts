@@ -8,10 +8,7 @@ export type Project = {
 	image?: string;
 	date: string;
 	tags: string[];
-	icon: {
-		svg: string;
-		color: ColorPalette;
-	};
+	icon: ColorIcon;
 };
 
 export type ColorPalette = [number, number, number];
@@ -30,7 +27,7 @@ export type SkillTree = {
 };
 export type ColorIcon = {
 	svg: string;
-	color: [number, number, number];
+	color: ColorPalette;
 };
 export type RawSkillTree =
 	| string

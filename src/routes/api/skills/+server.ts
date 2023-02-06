@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import type { SkillTree, RawSkillTree, ColorIcon } from '../../../types';
+import type { SkillTree, RawSkillTree, ColorIcon } from '$lib/models/types';
 
 type RawChildrenSkillTree = Exclude<SkillTree, 'children'> & {
 	children: RawSkillTree[];

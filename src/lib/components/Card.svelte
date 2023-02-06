@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import type { ColorPalette } from '../types';
-	import { getPaletteStyle } from './palette';
-	import { palette as globalPalette } from './stores';
+	import type { ColorPalette } from '$lib/models/types';
+	import { getPaletteStyle } from '$lib/models/palette';
+	import { palette as globalPalette } from '$lib/models/stores';
 	import { fly } from 'svelte/transition';
-	import { reducedMotion } from './accessibility';
+	import { reducedMotion } from '$lib/models/accessibility';
 
 	export let title: string | null = null;
 	export let path: string | null = null;

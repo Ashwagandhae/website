@@ -1,11 +1,11 @@
 <script lang="ts">
-	import TopCards from '../../TopCards.svelte';
-	import Card from '../../Card.svelte';
-	import Tags from '../../Tags.svelte';
-	import LinkGroup from '../../LinkGroup.svelte';
-	import type { Project } from '../../../types';
+	import TopCards from '$lib/components/TopCards.svelte';
+	import Card from '$lib/components/Card.svelte';
+	import Tags from '$lib/components/Tags.svelte';
+	import LinkGroup from '$lib/components/LinkGroup.svelte';
+	import type { Project } from '$lib/models/types';
 	import { onDestroy, onMount } from 'svelte';
-	import { palette } from '../../stores';
+	import { palette } from '$lib/models/stores';
 	import { base } from '$app/paths';
 	export let data: Project;
 
@@ -17,6 +17,9 @@
 	onDestroy(() => {
 		$palette = null;
 	});
+
+	let image =
+		data.image == null ? null : typeof data.image === 'string' ? data.image : data.slug + '.jpg';
 </script>
 
 <TopCards>
@@ -44,8 +47,8 @@
 	<Card hideBack>
 		{#if data.iframe != null}
 			<iframe title={data.name} src={data.iframe} />
-		{:else if data.image != null}
-			<img src="{base}/images/{data.image}" alt={data.name} />
+		{:else if image != null}
+			<img src="{base}/images/{image}" alt={data.name} />
 		{/if}
 	</Card>
 	<Card>

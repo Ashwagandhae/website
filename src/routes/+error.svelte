@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Card from './Card.svelte';
-	import TopCards from './TopCards.svelte';
+	import Card from '$lib/components/Card.svelte';
+	import TopCards from '$lib/components/TopCards.svelte';
 
 	let customMessages: { [key: number]: string } = {
 		404: `golly gee willikers, looks like you've taken a wrong turn!!!! looks like our army of busy 

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Card from '../Card.svelte';
-	import TopCards from '../TopCards.svelte';
-	import SkillCard from './SkillCard.svelte';
-	import type { SkillTree } from '../../types';
+	import Card from '$lib/components/Card.svelte';
+	import TopCards from '$lib/components/TopCards.svelte';
+	import SkillCard from '$lib/components/SkillCard.svelte';
+	import type { SkillTree } from '$lib/models/types';
 
 	export let data: { tree: SkillTree[] };
 </script>
