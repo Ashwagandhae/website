@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import ChickenDisplay from './ChickenDisplay.svelte';
 
 	let colorSets = [
@@ -10,10 +11,7 @@
 			eye: 'black'
 		}
 	];
-	let pos = {
-		x: window.innerWidth * Math.random(),
-		y: window.innerHeight * Math.random()
-	};
+	let pos: { x: number; y: number } = { x: 0, y: 0 };
 	let direction = Math.random() < 0.5 ? 'left' : 'right';
 	const moveDistance = 150;
 	const moveVectors = [
@@ -43,11 +41,15 @@
 	function waitThenMove() {
 		timeout = setTimeout(move, 8_000 + Math.random() * 20_000);
 	}
-	waitThenMove();
 	function runAway() {
 		if (timeout) clearTimeout(timeout);
 		move();
 	}
+	onMount(() => {
+		pos.x = Math.random() * window.innerWidth;
+		pos.y = Math.random() * window.innerHeight;
+		waitThenMove();
+	});
 </script>
 
 <div class="chicken" style="--x: {pos.x}px; --y: {pos.y}px;--" on:click={runAway}>
