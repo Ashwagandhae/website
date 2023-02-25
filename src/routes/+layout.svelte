@@ -5,12 +5,10 @@
 	import { palette } from '$lib/models/stores';
 	import './styles.css';
 	import PageTransition from '$lib/components/PageTransition.svelte';
-	import ChickenYard from '$lib/components/ChickenYard.svelte';
 </script>
 
 <div class="root" style={getPaletteStyle($palette)}>
 	<div class="back" />
-	<ChickenYard />
 	<Messages />
 	<PageTransition>
 		<main>
