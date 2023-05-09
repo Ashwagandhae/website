@@ -1,0 +1,1 @@
+import{b as e}from"./paths.83831b86.js";const o=async({fetch:s})=>({skills:await(await s(`${e}/api/skills`)).json()}),n=Object.freeze(Object.defineProperty({__proto__:null,load:o},Symbol.toStringTag,{value:"Module"}));export{n as _,o as l};
