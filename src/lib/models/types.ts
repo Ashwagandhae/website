@@ -19,11 +19,12 @@ export type Message = {
 	count: number;
 };
 
-export type SkillTree = {
+export type Skill = {
 	name: string;
+	icon: ColorIcon;
 	start: number;
-	children: SkillTree[];
-	icon?: ColorIcon;
+	big?: boolean;
+	long?: boolean;
 };
 export type ColorIcon = {
 	svg: string;

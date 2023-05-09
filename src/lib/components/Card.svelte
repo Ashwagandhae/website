@@ -72,6 +72,7 @@
 		position: relative;
 		padding: 1rem;
 		min-width: 2rem;
+		box-sizing: border-box;
 	}
 
 	.square {

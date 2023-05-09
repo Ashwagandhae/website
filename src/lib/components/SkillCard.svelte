@@ -1,24 +1,24 @@
 <script lang="ts">
 	import Card from './Card.svelte';
-	import type { SkillTree } from '$lib/models/types';
+	import type { Skill } from '$lib/models/types';
 	import { messenger } from '$lib/models/stores';
 
-	export let tree: SkillTree;
+	export let skill: Skill;
 	let params = new URLSearchParams();
-	params.set('tags', tree.name);
+	params.set('tags', skill.name);
 </script>
 
-<div class="skill" style="--children-amount: {tree.children.length}">
+<div class="skill" class:big={skill.big} class:long={skill.long}>
 	<Card
 		fullContent
-		palette={tree.icon?.color}
+		palette={skill.icon?.color}
 		modifyGlobalPalette
 		hoverable
 		path="projects?{params.toString()}"
-		onLinkClick={() => messenger.addMessage('Searched projects for ' + tree.name)}
+		onLinkClick={() => messenger.addMessage('Searched projects for ' + skill.name)}
 	>
 		<div class="header">
-			{#if tree.icon}
+			{#if skill.icon}
 				<svg
 					width="500"
 					height="500"
@@ -26,20 +26,13 @@
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					{@html tree.icon?.svg}
+					{@html skill.icon?.svg}
 				</svg>
 			{/if}
-			<h2>{tree.name}</h2>
+			<h2>{skill.name}</h2>
 		</div>
-		<p>since {tree.start?.toString()}</p>
+		<p>since {skill.start?.toString()}</p>
 	</Card>
-	{#if tree.children.length > 0}
-		<div class="children">
-			{#each tree.children as child}
-				<svelte:self tree={child} />
-			{/each}
-		</div>
-	{/if}
 </div>
 
 <style>
@@ -47,20 +40,17 @@
 		/* no wrap */
 		white-space: nowrap;
 	}
-	.skill {
-		display: flex;
-		flex-direction: row;
-		gap: var(--gap);
+	.skill.big {
+		grid-column: span 2;
+		grid-row: span 2;
+	}
+	.skill.long {
+		grid-column: span 2;
 	}
 	.skill > :global(.card) {
-		width: calc((100vw - var(--side-padding-x) * 2 - var(--gap) * 3) * 0.3);
+		width: auto;
 		min-width: min-content;
-	}
-	.children {
-		display: flex;
-		flex-direction: column;
-		gap: var(--gap);
-		/* fill the width */
+		height: 100%;
 	}
 	.header {
 		display: flex;
@@ -73,19 +63,15 @@
 	}
 	/* mobile */
 	@media (max-width: 1000px) {
-		.skill {
+		/* .skill {
 			flex-direction: column;
 		}
 		.skill > :global(.card) {
 			width: calc(100% - var(--gap) * 2);
 		}
-		.children {
-			width: 90%;
-			padding-left: 10%;
-		}
 		.header > svg {
 			width: 1.5rem;
 			height: 1.5rem;
-		}
+		} */
 	}
 </style>
