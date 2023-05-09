@@ -2,22 +2,24 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/website/favicon.png" />
+		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
-		<link href="/website/_app/immutable/assets/_layout-de50950c.css" rel="stylesheet">
-		<link href="/website/_app/immutable/assets/TopCards-b6444e23.css" rel="stylesheet">
-		<link rel="modulepreload" href="/website/_app/immutable/start-811f561f.js">
-		<link rel="modulepreload" href="/website/_app/immutable/chunks/index-893b3148.js">
-		<link rel="modulepreload" href="/website/_app/immutable/chunks/singletons-9158bfda.js">
-		<link rel="modulepreload" href="/website/_app/immutable/chunks/paths-b4419565.js">
-		<link rel="modulepreload" href="/website/_app/immutable/chunks/preload-helper-41c905a7.js">
-		<link rel="modulepreload" href="/website/_app/immutable/components/pages/_layout.svelte-9ae962aa.js">
-		<link rel="modulepreload" href="/website/_app/immutable/chunks/accessibility-9fe6fc1a.js">
-		<link rel="modulepreload" href="/website/_app/immutable/modules/pages/_layout.ts-9cbb603b.js">
-		<link rel="modulepreload" href="/website/_app/immutable/chunks/_layout-da46b06b.js">
-		<link rel="modulepreload" href="/website/_app/immutable/components/pages/about/_page.svelte-ef4d648b.js">
-		<link rel="modulepreload" href="/website/_app/immutable/chunks/TopCards-acedb3e4.js">
+		<link href="./_app/immutable/assets/_layout.295d1d30.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/TopCards.03c7f175.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.a04a0a1c.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.ca6fcb68.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.6fa7629d.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.73d07ecc.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/paths.1d5af484.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.84528d03.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.41c905a7.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_layout.svelte.6f612794.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/accessibility.a839c7f4.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_layout.ts.984db11e.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout.da46b06b.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/about-page.svelte.844b8783.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/TopCards.0f58b83a.js">
 	</head>
 	<body data-sveltekit-prefetch>
 		<div style="display: contents">
@@ -26,17 +28,17 @@
 <div class="root svelte-1y28lu" style=""><div class="back svelte-1y28lu"></div>
 	<div class="messages svelte-h7kwfi"><ul class="svelte-h7kwfi"></ul>
 </div>
-	<div class="transition svelte-2n6otd"><main><div class="cards svelte-bm7wkx"><div class="svelte-1b1mq84  single"><div class="card svelte-1eipv7h    hoverable" style=""><a data-sveltekit-noscroll href="/website/./" class="svelte-1eipv7h">null</a>
+	<div class="transition svelte-2n6otd"><main><div class="cards svelte-bm7wkx"><div class="svelte-1b1mq84  single"><div class="card svelte-1fna4c2    hoverable" style=""><a data-sveltekit-noscroll href="/website/./" class="svelte-1fna4c2">null</a>
 	
 	
-	<div class="content svelte-1eipv7h"><h1>About me</h1>
+	<div class="content svelte-1fna4c2"><h1>About me</h1>
 		<p>Who I am and what I do</p></div>
 </div>
 </div>
-<div class="content"><div class="card svelte-1eipv7h" style="">
+<div class="content"><div class="card svelte-1fna4c2" style="">
 	
 	
-	<div class="content svelte-1eipv7h"><p>Hello, I&#39;m Julian. I was born and raised in San Francisco, and I&#39;m currently a student at the
+	<div class="content svelte-1fna4c2"><p>Hello, I&#39;m Julian. I was born and raised in San Francisco, and I&#39;m currently a student at the
 			College Preparatory School in Oakland, California. I love coding, playing the piano, and
 			taking care of my chickens. You can find me on
 			<a href="https://github.com/Ashwagandhae">GitHub</a> and
@@ -51,21 +53,31 @@
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="x56vee">
-			import { start } from "/website/_app/immutable/start-811f561f.js";
+			
+			<script>
+				{
+					__sveltekit_kvtpro = {
+						env: {},
+						assets: "/website",
+						base: new URL(".", location).pathname.slice(0, -1),
+						element: document.currentScript.parentElement
+					};
 
-			start({
-				env: {},
-				paths: {"base":"/website","assets":"/website"},
-				target: document.querySelector('[data-sveltekit-hydrate="x56vee"]').parentNode,
-				version: "1677305063521",
-				hydrate: {
-					node_ids: [0, 3],
-					data: [null,null],
-					form: null
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.a04a0a1c.js"),
+						import("./_app/immutable/entry/app.84528d03.js")
+					]).then(([kit, app]) => {
+						kit.start(app, __sveltekit_kvtpro.element, {
+							node_ids: [0, 3],
+							data,
+							form: null,
+							error: null
+						});
+					});
 				}
-			});
-		</script>
-	</div>
+			</script>
+		</div>
 	</body>
 </html>

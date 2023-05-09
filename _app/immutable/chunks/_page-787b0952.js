@@ -1,1 +1,0 @@
-import{b as s}from"./paths-b4419565.js";const a=!0,p=async({fetch:o})=>{const e=(await(await o(`${s}/api/projects`)).json()).map(n=>({...n.icon})),t=await(await o(`${s}/api/skill-icons`)).json();return{projectIcons:e,skillIcons:t}},l=Object.freeze(Object.defineProperty({__proto__:null,prerender:a,load:p},Symbol.toStringTag,{value:"Module"}));export{l as _,p as l,a as p};
